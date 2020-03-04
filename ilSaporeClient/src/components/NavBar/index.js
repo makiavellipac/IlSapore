@@ -87,7 +87,7 @@ export default function NavBar() {
                  color='white'
                  fontSize="20px"
               >~</Text>
-              <NavLink {...styles} exact to="/Menu">
+              <NavLink {...styles} exact to="/menu">
                   <Text
                   fontFamily="'Roboto', sans-serif"
                   >Menu</Text>
@@ -97,7 +97,7 @@ export default function NavBar() {
                  color='white'
                  fontSize="20px"
               >~</Text>
-              <NavLink {...styles} exact to="/Pedido">
+              <NavLink {...styles} exact to="/pedido">
                   <Text
                   fontFamily="'Roboto', sans-serif"
                   >Realizar Pedido</Text>
@@ -132,11 +132,18 @@ export default function NavBar() {
           {context.state.isLoggedIn && (
             <>
               <NavLink {...styles} exact to="/">
-                <Text>Home</Text>
+                  <Text
+                  fontFamily="'Roboto', sans-serif"
+                  >Inicio</Text>
               </NavLink>
               <NavLink {...styles} exact to="/profile">
                 <Text>Menu
                 </Text>
+              </NavLink>
+              <NavLink {...styles} exact to="/pedido">
+                  <Text
+                  fontFamily="'Roboto', sans-serif"
+                  >Realizar Pedido</Text>
               </NavLink>
               <button onClick={context.logout}style={styles.style}>Logout</button>
             </>

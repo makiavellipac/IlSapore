@@ -1,6 +1,5 @@
 import React from 'react'
 import "./index.css"
-import { MyContext } from '../../context'
 import Pizarra from "../../components/Pizarra"
 import { Flex,Text } from '@chakra-ui/core'
 
@@ -10,8 +9,6 @@ function Home() {
   
 
   return(
-    <MyContext.Consumer>
-      {context=>(
         <>
         <div className="Home" style={{
           display:"Flex",
@@ -35,8 +32,7 @@ function Home() {
                   ><Text
                   >IlSaporeDeLaPizza    2020</Text></Flex>
         </>
-      )}
-    </MyContext.Consumer>
+
   )
   
     
