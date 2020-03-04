@@ -29,6 +29,9 @@ const PIZZA_SERVICE={
       },
       allIngredientes: async () => {
         return await MY_SERVICE.get("pizza/get_ingredientes");
+      },
+      allPizza: async()=>{
+        return await MY_SERVICE.get("pizza/get_pizza");
       }
 
     

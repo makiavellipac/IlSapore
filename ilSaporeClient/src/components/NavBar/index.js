@@ -131,21 +131,56 @@ export default function NavBar() {
           )}
           {context.state.isLoggedIn && (
             <>
+              <Text
+                   padding= '20px'
+                   color='white'
+                   fontSize="20px"
+              >~</Text>
               <NavLink {...styles} exact to="/">
                   <Text
                   fontFamily="'Roboto', sans-serif"
                   >Inicio</Text>
               </NavLink>
-              <NavLink {...styles} exact to="/profile">
+              <Text
+              padding= '20px'
+              color='white'
+              fontSize="20px"
+              >~</Text>
+              <NavLink {...styles} exact to="/aboutUs">
+                  <Text
+                  fontFamily="'Roboto', sans-serif"
+                  >Acerca</Text>
+              </NavLink>
+              <Text
+                 padding= '20px'
+                 color='white'
+                 fontSize="20px"
+              >~</Text>
+              <NavLink {...styles} exact to="/menu">
                 <Text>Menu
                 </Text>
               </NavLink>
+              <Text
+              padding= '20px'
+              color='white'
+              fontSize="20px"
+              >~</Text>
               <NavLink {...styles} exact to="/pedido">
                   <Text
                   fontFamily="'Roboto', sans-serif"
                   >Realizar Pedido</Text>
               </NavLink>
+              <Text
+              padding= '20px'
+              color='white'
+              fontSize="20px"
+              >~</Text>              
               <button onClick={context.logout}style={styles.style}>Logout</button>
+              <Text
+              padding= '20px'
+              color='white'
+              fontSize="20px"
+              >~</Text>              
             </>
           )}
         </Flex>

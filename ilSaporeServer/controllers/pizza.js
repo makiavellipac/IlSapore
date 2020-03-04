@@ -60,4 +60,6 @@ exports.getIngredientes=async(req,res)=>{
   res.send(await Ingrediente.find())
 }
 
-
+exports.getPizza=async(req,res)=>{
+  res.send(await Pizza.find())
+}

@@ -31,6 +31,7 @@ class MyProvider extends Component {
       image_URL:""
     },  
     ingredientes:[],
+    pizzas:[],
     isLoggedIn: false,
     msg: 'Landing page'
   }
@@ -143,7 +144,7 @@ class MyProvider extends Component {
           loggedUser: data.user,
           isLoggedIn: true
         }))
-        this.props.history.push("/profile")
+        this.props.history.push("/")
       })
       .catch(() => {
         alert("Error al Logearte")
@@ -210,6 +211,15 @@ class MyProvider extends Component {
     }))
   }
 
+  getdataPizza=async()=>{
+    const {data}=await PIZZA_SERVICE.allPizza()
+    this.setState(prevState=>({
+      ...prevState,
+      pizzas:data
+    }))
+
+  }
+
   deleteData=()=>{
     console.log("delete")
     // const {id}=e.target
@@ -225,6 +235,11 @@ class MyProvider extends Component {
     this.setState(prevState=>({
       ...prevState,
         ingredientes:data
+    }))
+    const{pizzas}=await PIZZA_SERVICE.allPizza()
+    this.setState(prevState=>({
+      ...prevState,
+      pizzas:pizzas
     }))
   }
 
@@ -244,6 +259,8 @@ class MyProvider extends Component {
       handlePizzaInput,
       handlePizzaSubmit,
       getdata,
+      getdataPizza,
+      deleteData,
       logout,
     } = this
     return (
@@ -260,6 +277,8 @@ class MyProvider extends Component {
           handlePizzaInput,
           handlePizzaSubmit,
           getdata,
+          getdataPizza,
+          deleteData,
           logout
         }}
       >

@@ -1,9 +1,7 @@
-.Menu{
+body{
     width: 100vw;
-    height: 100vh;
     background-image: url("/images/fondo3.jpg");
-    position: absolute;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     
 }

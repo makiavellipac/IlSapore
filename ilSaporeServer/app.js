@@ -15,8 +15,8 @@ const schemaPizza = require ('./models/Pizza')
 mongoose
   .connect('mongodb://localhost/ilsapore', {useNewUrlParser: true})
   .then(x => {
-    schemaPizza.create(pizzaData)
-    console.log(pizzaData)
+    // schemaPizza.create(pizzaData)
+    // console.log(pizzaData)
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
