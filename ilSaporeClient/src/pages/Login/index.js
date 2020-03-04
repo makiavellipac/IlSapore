@@ -9,8 +9,8 @@ function Login() {
     <MyContext.Consumer>
     {context=>(
       <div className="Login">
-      <Flex w="100vw" h="90vh" align="center" justify="center">
-          <Form submit={context.handleLoginSubmit} title="Login">
+      <Flex w="100vw" h="90vh" align="center" justifyContent="center">
+          <Form submit={context.handleLoginSubmit} title="Iniciar Sesión">
             <FormControl isRequired>
               <InputGroup>
                 <InputLeftAddon children={<Icon name="email" />} />

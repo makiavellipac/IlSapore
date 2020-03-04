@@ -1,8 +1,9 @@
 .Signup{
     width: 100vw;
     height: 100vh;
-    background-image: url("/images/Fondo.jpg");
+    background-image: url("/images/fondo3.jpg");
     position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
+    padding-top: 3.8rem;
 }

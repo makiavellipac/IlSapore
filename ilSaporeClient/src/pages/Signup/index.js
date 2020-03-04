@@ -11,7 +11,7 @@ function Signup() {
       {context=>(
       <div className="Signup">
           <Flex w="100vw" h="90vh" align="center" justify="center">
-            <Form submit={context.handleSignupSubmit} title="Signup">
+            <Form submit={context.handleSignupSubmit} title="Registrarse" spacing="3">
               <FormControl isRequired>
                 <InputGroup>
                   <InputLeftAddon children={<Icon name="user" />} />
