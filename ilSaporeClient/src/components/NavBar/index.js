@@ -7,7 +7,7 @@ const styles = {
   style: {
     padding: '20px',
     color:'white',
-    fontSize:"20px",
+    
     
 
   },
@@ -22,8 +22,9 @@ export default function NavBar() {
   return (
     <MyContext.Consumer>
       {context => (
-        <div style={{position:"fixed",
-                      zIndex:"50"}}
+        <div style={{position:"absolute",
+                      zIndex:"50",
+                      flexWrap:"wrap"}}
         >
         <Flex
           w="100vw"
@@ -31,19 +32,20 @@ export default function NavBar() {
           bg="navbar.900"
           align="center"
           justify="center"
-          position="relative"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+          position="relative"
+          flexWrap="wrap"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
         >
           <Text
-          fontSize="3em"
+          fontSize="3rem"
           fontFamily="'Lobster', cursive"
           color="#009246">IlSapore </Text>
           <Text
-          fontSize="3em"
+          fontSize="3rem"
           fontFamily="'Lobster', cursive"
           color="#FFFFFF"
           >DeLa </Text>
           <Text
-           fontSize="3em"
+           fontSize="3rem"
           fontFamily="'Lobster', cursive"
           color="#CE2B37"
           >Pizza</Text>
@@ -56,6 +58,7 @@ export default function NavBar() {
           align="center"
           justify="center"
           position="relative"
+          flexWrap="wrap"
         >
           {!context.state.isLoggedIn && (
             <>
@@ -67,7 +70,7 @@ export default function NavBar() {
               <NavLink {...styles} exact to="/">
                   <Text
                   fontFamily="'Roboto', sans-serif"
-                  >Home</Text>
+                  >Inicio</Text>
               </NavLink>
               <Text
                  padding= '20px'
@@ -84,10 +87,20 @@ export default function NavBar() {
                  color='white'
                  fontSize="20px"
               >~</Text>
-              <NavLink {...styles} exact to="/login">
+              <NavLink {...styles} exact to="/Menu">
                   <Text
                   fontFamily="'Roboto', sans-serif"
-                  >Inicia Sesión</Text>
+                  >Menu</Text>
+              </NavLink>
+              <Text
+                 padding= '20px'
+                 color='white'
+                 fontSize="20px"
+              >~</Text>
+              <NavLink {...styles} exact to="/Pedido">
+                  <Text
+                  fontFamily="'Roboto', sans-serif"
+                  >Realizar Pedido</Text>
               </NavLink>
               <Text
                  padding= '20px'
@@ -98,6 +111,16 @@ export default function NavBar() {
                   <Text
                   fontFamily="'Roboto', sans-serif"
                   >Regístrate</Text>
+              </NavLink>
+              <Text
+                 padding= '20px'
+                 color='white'
+                 fontSize="20px"
+              >~</Text>
+              <NavLink {...styles} exact to="/login">
+                  <Text
+                  fontFamily="'Roboto', sans-serif"
+                  >Inicia Sesión</Text>
               </NavLink>
               <Text
                  padding= '20px'
