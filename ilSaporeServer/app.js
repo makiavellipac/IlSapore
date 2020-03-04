@@ -10,14 +10,11 @@ const path         = require('path');
 const session = require('express-session');
 const passport = require('./config/passport');
 const cors = require('cors');
-const pizzaData = require ('./test/pizza')
 const schemaPizza = require ('./models/Pizza')
 mongoose
   .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
     schemaPizza.create(pizzaData)
-    //console.log(pizzaData)
-    //console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
