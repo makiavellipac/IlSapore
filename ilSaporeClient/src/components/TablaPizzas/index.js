@@ -24,7 +24,7 @@ function TablaPizzas(color) {
                         </tr>
                         
                             {context.state.pizzas.map(pizza=>
-                                <tr>
+                                <tr key={pizza._id}>
                                     <td>{pizza.nombre}</td>
                                     <td>{pizza.ingredientes}</td>
                                     <td>{pizza.precio}</td>

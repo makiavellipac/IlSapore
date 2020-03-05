@@ -24,7 +24,7 @@ function TablaIngredientes(color) {
                         </tr>
                         
                             {context.state.ingredientes.map(ingrediente=>
-                                <tr>
+                                <tr key={ingrediente._id}>
                                     <td>{ingrediente.ingrediente}</td>
                                     <td>{ingrediente.tipo}</td>
                                     <td>{ingrediente.extraPrecio}</td>

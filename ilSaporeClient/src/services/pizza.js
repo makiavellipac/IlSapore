@@ -22,7 +22,7 @@ const PIZZA_SERVICE={
         return await MY_SERVICE.post("pizza/crear_ingrediente",pizza);
       },
       borrarIngrediente: async (pizza) => {
-        return await MY_SERVICE.post("pizza/borrar_ingrediente",pizza);
+        return await MY_SERVICE.delete("pizza/borrar_ingrediente",pizza);
       },
       editarIngrediente: async (pizza) => {
         return await MY_SERVICE.post("pizza/editar_ingrediente",pizza);

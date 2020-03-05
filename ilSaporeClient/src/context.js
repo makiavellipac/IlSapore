@@ -68,7 +68,7 @@ class MyProvider extends Component {
         [name]: value
       }
     }))
-    console.log(name,value)
+    
     
   }
 
@@ -105,7 +105,7 @@ class MyProvider extends Component {
       this.state.formPizzas.ingredientes.splice(this.state.formPizzas.ingredientes.indexOf(value),1)
     else
       this.state.formPizzas.ingredientes.push(value)
-    console.log("en ingredientes",this.state.formPizzas.ingredientes)
+    
   }
 
 
@@ -238,9 +238,7 @@ class MyProvider extends Component {
   }
 
   deleteData=e=>{
-    const {id}=e.target
-    console.log(id)
-    // PIZZA_SERVICE.borrarIngrediente(id)
+    PIZZA_SERVICE.borrarIngrediente(e.target)
   }
 
   
