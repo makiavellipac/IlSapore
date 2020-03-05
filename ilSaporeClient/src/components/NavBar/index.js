@@ -129,7 +129,7 @@ export default function NavBar() {
               >~</Text>
             </>
           )}
-          {context.state.isLoggedIn && (
+          {context.state.isLoggedIn && !context.state.isAdmin && (
             <>
               <Text
                    padding= '20px'
@@ -182,6 +182,9 @@ export default function NavBar() {
               fontSize="20px"
               >~</Text>              
             </>
+          )}
+          {context.state.isLoggedIn && context.state.isAdmin && (
+            <p></p>
           )}
         </Flex>
         </div>

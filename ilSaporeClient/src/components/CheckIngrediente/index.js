@@ -8,10 +8,11 @@ function CheckIngrediente(color) {
         <MyContext.Consumer>
             {context=>(
                 <>
-                    <Acordeon title="Salsa">
+                    <Acordeon title="Salsa" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Salsa" ? (
                                 <Checkbox 
+                                    color={color}
                                     onChange={context.handleIngredientesCheckBox}
                                     name={ingrediente.ingrediente}
                                     key={ingrediente._id}
@@ -22,10 +23,11 @@ function CheckIngrediente(color) {
                                 ):null
                         )}
                     </Acordeon>
-                    <Acordeon title="Vegetal">
+                    <Acordeon title="Vegetal" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Vegetal" ? (
                                 <Checkbox
+                                    color={color}
                                     onChange={context.handleIngredientesCheckBox}
                                     name={ingrediente.ingrediente}
                                     key={ingrediente._id}
@@ -36,10 +38,11 @@ function CheckIngrediente(color) {
                                 ):null
                             )}
                     </Acordeon>
-                    <Acordeon title="Queso">
+                    <Acordeon title="Queso" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Queso" ? (
                                 <Checkbox 
+                                    color={color}
                                     onChange={context.handleIngredientesCheckBox}
                                     name={ingrediente.ingrediente}
                                     key={ingrediente._id}
@@ -50,10 +53,11 @@ function CheckIngrediente(color) {
                             ):null
                         )}
                     </Acordeon>
-                    <Acordeon title="Carnes">
+                    <Acordeon title="Carnes" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Carnes" ? (
-                                <Checkbox 
+                                <Checkbox
+                                color={color} 
                                 name={ingrediente.ingrediente}
                                 key={ingrediente._id}
                                 onChange={context.handleIngredientesCheckBox}
@@ -64,10 +68,11 @@ function CheckIngrediente(color) {
                             ):null
                         )}
                     </Acordeon>
-                    <Acordeon title="Fruta">
+                    <Acordeon title="Fruta" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Fruta" ? (
-                                <Checkbox 
+                                <Checkbox
+                                    color={color} 
                                     key={ingrediente._id}
                                     onChange={context.handleIngredientesCheckBox}
                                     value={ingrediente.ingrediente}
@@ -77,10 +82,11 @@ function CheckIngrediente(color) {
                             ):null
                         )}  
                     </Acordeon>
-                    <Acordeon title="Condimento">
+                    <Acordeon title="Condimento" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Condimento" ? (
                                 <Checkbox 
+                                    color={color}
                                     name={ingrediente.ingrediente}
                                     key={ingrediente._id}
                                     onChange={context.handleIngredientesCheckBox}
@@ -91,10 +97,11 @@ function CheckIngrediente(color) {
                             ):null
                         )}
                     </Acordeon>
-                    <Acordeon title="Extras">
+                    <Acordeon title="Extras" color={color}>
                         {context.state.ingredientes.map(ingrediente => 
                             ingrediente.tipo==="Extras" ? (
                                 <Checkbox 
+                                    color={color}
                                     name={ingrediente.ingrediente}
                                     key={ingrediente._id}
                                     onChange={context.handleIngredientesCheckBox}

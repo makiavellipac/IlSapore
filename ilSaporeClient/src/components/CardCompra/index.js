@@ -1,5 +1,7 @@
 import React from 'react'
-import { Box, Text, Image} from '@chakra-ui/core'
+import { Box, Text, Image,NumberInput,NumberInputField,NumberInputStepper,NumberDecrementStepper,NumberIncrementStepper, Button} from '@chakra-ui/core'
+import Acordeon from "../Acordeon"
+import ChekIngrediente from "../CheckIngrediente"
 
 function CardCompra({ nombre, ingredientes,precio,img}) {
   return (
@@ -36,6 +38,17 @@ function CardCompra({ nombre, ingredientes,precio,img}) {
         <Box>
           <Text color="white">${precio}/Mx</Text>
         </Box>
+        <Acordeon title="Añadir Ingredientes" color="white">
+          <ChekIngrediente color="white"/>
+        </Acordeon>
+        <NumberInput defaultValue={0} min={0} max={20}>
+            <NumberInputField />
+              <NumberInputStepper>
+                <NumberIncrementStepper />
+                <NumberDecrementStepper />
+            </NumberInputStepper>
+        </NumberInput>
+        <Button color="white" variantColor="teal">Añadir</Button>
       </Box>
     </Box>
   )

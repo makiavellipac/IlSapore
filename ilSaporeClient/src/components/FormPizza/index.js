@@ -8,7 +8,7 @@ import CheckIngrediente from "../CheckIngrediente"
 function FormPizza(){
   
   const [ImageTemp,handleImageTemp]=useState();
-  const [filePhoto,handleFilePhoto]=useState();
+  const [handleFilePhoto]=useState();
 
   const reader= new FileReader()
 

@@ -33,6 +33,7 @@ class MyProvider extends Component {
     ingredientes:[],
     pizzas:[],
     isLoggedIn: false,
+    isAdmin:false,
     msg: 'Landing page'
   }
 
@@ -67,7 +68,7 @@ class MyProvider extends Component {
         [name]: value
       }
     }))
-    console.log(name,value)
+    
     
   }
 
@@ -104,7 +105,7 @@ class MyProvider extends Component {
       this.state.formPizzas.ingredientes.splice(this.state.formPizzas.ingredientes.indexOf(value),1)
     else
       this.state.formPizzas.ingredientes.push(value)
-    console.log("en ingredientes",this.state.formPizzas.ingredientes)
+    
   }
 
 
@@ -134,17 +135,33 @@ class MyProvider extends Component {
     e.preventDefault()
     const { email, password } = this.state.formLogin
     AUTH_SERVICE.login({ email, password })
-      .then(({ data }) => {
-        this.setState(prevState => ({
-          ...prevState,
-          formLogin: {
-            email: '',
-            password: ''
-          },
-          loggedUser: data.user,
-          isLoggedIn: true
-        }))
-        this.props.history.push("/")
+      .then(({ data }) => {        
+        if(data.user.role==="Admin"){
+          this.setState(prevState => ({
+            ...prevState,
+            formLogin: {
+              email: '',
+              password: ''
+            },
+            loggedUser: data.user,
+            isLoggedIn: true,
+            isAdmin:true
+          }))
+          this.props.history.push("/")
+        }
+        else{
+          this.setState(prevState => ({
+            ...prevState,
+            formLogin: {
+              email: '',
+              password: ''
+            },
+            loggedUser: data.user,
+            isLoggedIn: true,
+            isAdmin:false
+          }))
+          this.props.history.push("/")
+        }
       })
       .catch(() => {
         alert("Error al Logearte")
@@ -198,7 +215,7 @@ class MyProvider extends Component {
 
 
   logout = async () => {
-    this.setState({isLoggedIn: false})
+    this.setState({isLoggedIn: false,isAdmin:false})
     await AUTH_SERVICE.logout()
     this.props.history.push("/")
 }
@@ -220,10 +237,8 @@ class MyProvider extends Component {
 
   }
 
-  deleteData=()=>{
-    console.log("delete")
-    // const {id}=e.target
-    // PIZZA_SERVICE.borrarIngrediente({id})
+  deleteData=e=>{
+    PIZZA_SERVICE.borrarIngrediente(e.target)
   }
 
   

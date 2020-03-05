@@ -9,10 +9,12 @@ function TablaIngredientes(color) {
                     context.getdata()
                 })
     return(
-        
         <MyContext.Consumer>
-            {context=>(
-                    <table style={{width:"100%"}}>
+            {context=>{
+                const {ingredientes}=context.state
+                if(ingredientes)
+                    return(
+                        <table style={{width:"100%"}}>
                         <tr>
                             <th>Nombre</th>
                             <th>Tipo</th>
@@ -22,7 +24,7 @@ function TablaIngredientes(color) {
                         </tr>
                         
                             {context.state.ingredientes.map(ingrediente=>
-                                <tr>
+                                <tr key={ingrediente._id}>
                                     <td>{ingrediente.ingrediente}</td>
                                     <td>{ingrediente.tipo}</td>
                                     <td>{ingrediente.extraPrecio}</td>
@@ -33,9 +35,14 @@ function TablaIngredientes(color) {
                                                 >Borrar</Button></td>
                                 </tr>        
                             )}
-                    </table>
+                        </table>
 
-            )}
+                    )
+                else
+                    return <p>Loading...</p>
+                    
+
+            }}
         </MyContext.Consumer>
     )
 }
