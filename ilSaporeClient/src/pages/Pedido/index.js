@@ -1,10 +1,8 @@
 import React,{ useEffect,useContext }  from 'react'
 import "./index.css"
 import { MyContext } from '../../context'
-import { Grid, Flex } from '@chakra-ui/core'
-import Card from "../../components/Card"
-import ChekIngrediente from "../../components/CheckIngrediente"
-import Acordeon from '../../components/Acordeon'
+import { Grid} from '@chakra-ui/core'
+import Card from "../../components/CardCompra"
 
 function Pedido() {
   const context = useContext(MyContext)
@@ -26,17 +24,14 @@ function Pedido() {
 }}>
   
 
-  <Grid templateColumns="repeat(2, 1fr)" gap={2}>
+  <Grid templateColumns="repeat(3, 1fr)" gap={6}>
   {context.state.pizzas.map(pizza=>
     <>
-    <Card 
+    <Card
     nombre={pizza.nombre}
     ingredientes={pizza.ingredientes}
     precio={pizza.precio}
     img={pizza.image_URL}/>
-    <Acordeon title="Añadir Ingredientes">
-    <ChekIngrediente/>
-    </Acordeon>
     
     </>
     )}
