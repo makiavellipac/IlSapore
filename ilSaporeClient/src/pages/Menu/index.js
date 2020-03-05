@@ -9,7 +9,7 @@ function Menu() {
   const context = useContext(MyContext)
   useEffect (()=>{
       context.getdataPizza()
-  },[])
+  })
 return(
 
 <MyContext.Consumer>
